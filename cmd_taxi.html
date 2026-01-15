@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commander un Taxi - EasyTravelBus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="max-w-md mx-auto bg-white min-h-screen shadow-lg">
+        <div class="bg-yellow-500 p-6 text-white rounded-b-3xl shadow-md">
+            <h1 class="text-2xl font-bold italic">EasyTravelTaxi 🚕</h1>
+            <p class="text-sm opacity-90">Développé par Ouattara Ben & Zongo Ostin (ESTA)</p>
+        </div>
+
+        <div class="p-6 -mt-8">
+            <div class="bg-white rounded-xl p-6 shadow-xl border border-gray-100">
+                <h2 class="text-gray-800 font-bold mb-4 flex items-center">
+                    <i class="fas fa-map-marker-alt text-red-500 mr-2"></i> Votre trajet
+                </h2>
+                
+                <form id="taxiForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase">Lieu de prise en charge</label>
+                        <input type="text" placeholder="Ma position actuelle" 
+                               class="w-full mt-1 p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-yellow-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase">Destination</label>
+                        <input type="text" placeholder="Où allez-vous ?" 
+                               class="w-full mt-1 p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-yellow-500">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="car" class="hidden peer" checked>
+                            <div class="p-3 border-2 border-gray-100 rounded-lg text-center peer-checked:border-yellow-500 peer-checked:bg-yellow-50">
+                                <i class="fas fa-car text-xl mb-1"></i>
+                                <p class="text-xs font-bold">Standard</p>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="car" class="hidden peer">
+                            <div class="p-3 border-2 border-gray-100 rounded-lg text-center peer-checked:border-yellow-500 peer-checked:bg-yellow-50">
+                                <i class="fas fa-crown text-xl mb-1 text-yellow-600"></i>
+                                <p class="text-xs font-bold">Premium</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="bg-blue-50 p-3 rounded-lg flex items-center justify-between border border-blue-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-mobile-alt text-blue-600 mr-3"></i>
+                            <span class="text-sm font-medium">Paiement Mobile</span>
+                        </div>
+                        <span class="text-xs text-blue-600 font-bold uppercase underline">Changer</span>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-black text-white py-4 rounded-xl font-bold text-lg hover:bg-gray-800 transition duration-300">
+                        Commander mon taxi
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="p-6 text-center">
+            <p class="text-xs text-gray-400">
+                Solution sécurisée propulsée par l'expertise des développeurs de l'ESTA.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('taxiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Votre demande de taxi est en cours de traitement par le système EasyTravelBus !');
+        });
+    </script>
+</body>
+</html>
